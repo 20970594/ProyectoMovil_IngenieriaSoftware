@@ -460,16 +460,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2123452413}
-        m_TargetAssemblyTypeName: S_SceneManager, Assembly-CSharp
-        m_MethodName: FadeOut
-        m_Mode: 1
+      - m_Target: {fileID: 1604549416}
+        m_TargetAssemblyTypeName: AYellowpaper.SerializedCollections.S_PopUpManager,
+          Assembly-CSharp
+        m_MethodName: OpenPopUp
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Login
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &302030845
@@ -647,6 +648,51 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &543044135
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 543044137}
+  - component: {fileID: 543044136}
+  m_Layer: 0
+  m_Name: AppManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &543044136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 543044135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5a4a6d734902354a962cfbd18f77540, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  themeManager: {fileID: 6879601737865519054, guid: dfab2223888d59241adba3b884aa3dbb, type: 3}
+--- !u!4 &543044137
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 543044135}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 641.4108, y: 182.4057, z: -0.60241294}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &565537959
 GameObject:
   m_ObjectHideFlags: 0
@@ -730,16 +776,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2123452413}
-        m_TargetAssemblyTypeName: S_SceneManager, Assembly-CSharp
-        m_MethodName: LoadMainmenuScene
-        m_Mode: 1
+      - m_Target: {fileID: 1604549416}
+        m_TargetAssemblyTypeName: AYellowpaper.SerializedCollections.S_PopUpManager,
+          Assembly-CSharp
+        m_MethodName: OpenPopUp
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Register
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &565537962
@@ -1000,6 +1047,58 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 720396898}
   m_CullTransparentMesh: 1
+--- !u!1 &1604549415
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1604549417}
+  - component: {fileID: 1604549416}
+  m_Layer: 0
+  m_Name: PopUpManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1604549416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1604549415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 758ce0191f71b1f4088422d7b01e6e3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PopUpList:
+    _serializedList:
+    - Key: Register
+      Value: {fileID: 6199433959674988010, guid: 20d1754ca7249a74aac994f3422e10cd, type: 3}
+    - Key: Login
+      Value: {fileID: 6199433959674988010, guid: adae2e92ffd820d428f5fa35a2b94821, type: 3}
+  ActivePopUps:
+    _serializedList: []
+--- !u!4 &1604549417
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1604549415}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 641.4108, y: 182.4057, z: -0.60241294}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1713029738
 GameObject:
   m_ObjectHideFlags: 0
@@ -1167,7 +1266,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentSceneName: 
   nextSceneName: 
-  fadeScene: {fileID: 1393045810294017207, guid: cc481cfeec5c788469269c6351ef3533, type: 3}
+  fadeScenePrefab: {fileID: 1393045810294017207, guid: cc481cfeec5c788469269c6351ef3533, type: 3}
   duration: 1
 --- !u!4 &2123452414
 Transform:
@@ -1193,3 +1292,5 @@ SceneRoots:
   - {fileID: 249607650}
   - {fileID: 45567986}
   - {fileID: 2123452414}
+  - {fileID: 1604549417}
+  - {fileID: 543044137}

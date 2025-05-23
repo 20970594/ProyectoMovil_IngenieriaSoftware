@@ -7,26 +7,52 @@ using static UnityEngine.GraphicsBuffer;
 
 public class S_SceneManager : MonoBehaviour
 {
+    public static S_SceneManager instance;
     [SerializeField]
     private string currentSceneName;
     [SerializeField]
     private string nextSceneName;
     [SerializeField]
+    private GameObject fadeScenePrefab;
     private GameObject fadeScene;
     private Material fadeMaterial;
     public float duration = 0.5f;
     Coroutine fadeRoutine;
     private void Awake()
     {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(this);
+        }
+    }
+
+    private void OnEnable()
+    {
+        Debug.Log("OnEnable called");
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        Debug.Log("OnSceneLoaded: " + scene.name);
+        currentSceneName = SceneManager.GetActiveScene().name;
+        fadeScene = Instantiate(fadeScenePrefab);
         fadeMaterial = fadeScene.GetComponentInChildren<Image>().material;
         fadeMaterial.SetFloat("_Fade", 1);
+        FadeOut();
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        currentSceneName = SceneManager.GetActiveScene().name;
+        /*currentSceneName = SceneManager.GetActiveScene().name;
         fadeScene = Instantiate(fadeScene);
-        FadeOut();
+        fadeMaterial = fadeScene.GetComponentInChildren<Image>().material;
+        fadeMaterial.SetFloat("_Fade", 1);
+        FadeOut();*/
     }
 
     // Update is called once per frame
@@ -49,9 +75,19 @@ public class S_SceneManager : MonoBehaviour
     }
 
     //Metodos de carga de niveles-----------------------------------------------------
+    public void LoadScene(string sceneName)
+    {
+        nextSceneName = sceneName;
+        FadeIn();
+    }
     public void LoadMainmenuScene()
     {
         nextSceneName = "MainmenuScene";
+        FadeIn();
+    }
+    public void LoadLessonScene()
+    {
+        nextSceneName = "Lessons";
         FadeIn();
     }
 
@@ -84,6 +120,9 @@ public class S_SceneManager : MonoBehaviour
             switch (nextSceneName)
             {
                 case "MainmenuScene":
+                    SceneManager.LoadScene(nextSceneName);
+                    break;
+                case "Lessons":
                     SceneManager.LoadScene(nextSceneName);
                     break;
             }
