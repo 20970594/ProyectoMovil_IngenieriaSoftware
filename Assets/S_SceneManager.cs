@@ -85,11 +85,11 @@ public class S_SceneManager : MonoBehaviour
         nextSceneName = "MainmenuScene";
         FadeIn();
     }
-    public void LoadLessonScene()
+    /*public void LoadLessonScene()
     {
         nextSceneName = "Lessons";
         FadeIn();
-    }
+    }*/
 
     //Metodos de FadeIn y FadeOut-----------------------------------------------------
     public void FadeIn()
@@ -123,6 +123,9 @@ public class S_SceneManager : MonoBehaviour
                     SceneManager.LoadScene(nextSceneName);
                     break;
                 case "Lessons":
+                    SceneManager.LoadScene(nextSceneName);
+                    break;
+                case "LessonScene":
                     SceneManager.LoadScene(nextSceneName);
                     break;
             }

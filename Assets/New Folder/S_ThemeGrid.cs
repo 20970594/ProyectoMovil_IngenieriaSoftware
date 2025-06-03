@@ -16,7 +16,8 @@ public class S_ThemeGrid : MonoBehaviour
             GameObject temp = Instantiate(prefabThemeBtn);
             temp.transform.SetParent(grid.transform);
             temp.GetComponentInChildren<TextMeshProUGUI>().text = theme.themeName;
-            temp.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(S_SceneManager.instance.LoadLessonScene);
+            temp.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(() => S_AppManager.AppInstance.UpdateCurrentTheme(theme.themeName));
+            temp.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(() => S_SceneManager.instance.LoadScene("Lessons"));
         }
     }
 

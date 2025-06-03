@@ -31,6 +31,10 @@ public class S_PopUpBase : MonoBehaviour
     {
         StartCoroutine(OpenPopUp());
     }
+    public void StartOpenPopUpSign(string name, S_Sign sign)//esto requeriere refactorización
+    {
+        StartCoroutine(OpenPopUpSign(name, sign));
+    }
 
     public void StartClosePopUp()
     {
@@ -53,6 +57,11 @@ public class S_PopUpBase : MonoBehaviour
         yield return null;
     }
     public virtual IEnumerator OpenPopUp()
+    {
+        Debug.Log("Abriendo padre");
+        yield return null;
+    }
+    public virtual IEnumerator OpenPopUpSign(string name, S_Sign sign)//esto requeriere refactorización
     {
         Debug.Log("Abriendo padre");
         yield return null;

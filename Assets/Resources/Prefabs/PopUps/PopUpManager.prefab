@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &192786409339595511
+--- !u!1 &8958293974479384481
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4872944236187841264}
-  - component: {fileID: 7339703684358644163}
+  - component: {fileID: 6022704469344699670}
+  - component: {fileID: 5497088307032103487}
   m_Layer: 0
-  m_Name: SignC
+  m_Name: PopUpManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4872944236187841264
+--- !u!4 &6022704469344699670
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 192786409339595511}
+  m_GameObject: {fileID: 8958293974479384481}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 641.4108, y: 182.4057, z: -0.60241294}
@@ -32,20 +32,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7339703684358644163
+--- !u!114 &5497088307032103487
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 192786409339595511}
+  m_GameObject: {fileID: 8958293974479384481}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b038c035739312047911a8d90b0cdeb7, type: 3}
+  m_Script: {fileID: 11500000, guid: 758ce0191f71b1f4088422d7b01e6e3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  signName: C
-  Description: Letra C
-  SignImage: {fileID: -403382671977132324, guid: 58f1089a2fd6922418997a14f9eda393, type: 3}
-  Video: {fileID: 32900000, guid: 08e20082380917c46aab99408900980b, type: 3}
-  renderTexture: {fileID: 8400000, guid: 71ee122f749738f43b85a1e182ec8c65, type: 2}
+  PopUpList:
+    _serializedList:
+    - Key: SignDetails
+      Value: {fileID: 7778265697537675052, guid: a50b3a08d0f59974ba7cdbefb5fbe03a, type: 3}
+    - Key: UserDetails
+      Value: {fileID: 7778265697537675052, guid: 20180e4b7cc21664ead07731ff0a13f3, type: 3}
+    - Key: Register
+      Value: {fileID: 6199433959674988010, guid: 20d1754ca7249a74aac994f3422e10cd, type: 3}
+    - Key: Login
+      Value: {fileID: 6199433959674988010, guid: adae2e92ffd820d428f5fa35a2b94821, type: 3}
+  ActivePopUps:
+    _serializedList: []

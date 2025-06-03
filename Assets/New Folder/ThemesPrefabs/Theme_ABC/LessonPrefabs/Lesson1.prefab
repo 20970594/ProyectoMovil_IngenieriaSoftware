@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f55e63daabbce24d89a3f71e93c06fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Lesson_ABC
+  lessonName: Lesson_ABC
   Description: "Se\xF1as A-B-C"
   SignList:
     _serializedList:

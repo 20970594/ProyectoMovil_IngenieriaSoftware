@@ -44,8 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24c0fa238fb10fc42be703b5eee4cd01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Abcedario
-  Description: "Tema que contiene las se\xF1as del abcedario"
+  themeName: ABC
+  themeDescription: 
   LessonList:
     _serializedList:
     - Key: Lesson_ABC

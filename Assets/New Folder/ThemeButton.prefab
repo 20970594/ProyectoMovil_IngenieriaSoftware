@@ -148,7 +148,6 @@ GameObject:
   - component: {fileID: 3295948112804625905}
   - component: {fileID: 5801476247347342238}
   - component: {fileID: 1263182221406545789}
-  - component: {fileID: 7970337929289060232}
   m_Layer: 5
   m_Name: ThemeButton
   m_TagString: Untagged
@@ -270,19 +269,3 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &7970337929289060232
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4635215126619290738}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24c0fa238fb10fc42be703b5eee4cd01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: 
-  Description: 
-  LessonList:
-    _serializedList: []

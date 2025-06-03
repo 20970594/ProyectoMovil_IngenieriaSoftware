@@ -4,13 +4,15 @@ using UnityEngine.Video;
 public class S_Sign : MonoBehaviour
 {
     [SerializeField]
-    string Name;
+    public string signName;
     [SerializeField]
-    string Description;
+    public string Description;
     [SerializeField]
-    Sprite SignImage;
+    public Sprite SignImage;
     [SerializeField]
-    VideoClip Video;
+    public VideoClip Video;
+    [SerializeField]
+    public RenderTexture renderTexture;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

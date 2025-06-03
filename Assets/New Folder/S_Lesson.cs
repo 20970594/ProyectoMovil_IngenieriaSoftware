@@ -5,9 +5,9 @@ namespace AYellowpaper.SerializedCollections
     public class S_Lesson : MonoBehaviour
     {
         [SerializeField]
-        string Name;
+        public string lessonName;
         [SerializeField]
-        string Description;
+        public string Description;
         [SerializedDictionary("SignName", "Sign")]
         public SerializedDictionary<string, S_Sign> SignList;
         // Start is called once before the first execution of Update after the MonoBehaviour is created

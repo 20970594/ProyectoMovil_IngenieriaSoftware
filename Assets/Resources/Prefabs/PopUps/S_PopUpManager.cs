@@ -30,6 +30,14 @@ namespace AYellowpaper.SerializedCollections {
             ActivePopUps[name].GetComponent<S_PopUpBase>().StartOpenPopUp();
         }
 
+        public void OpenPopUpSign(string name, S_Sign sign) //esto requeriere refactorización
+        {
+            AddActivePopUp(name, PopUpList[name]);
+            Debug.Log("Opening: " + name + "/ " + ActivePopUps[name].GetComponent<S_PopUpBase>().popUpName);
+
+            ActivePopUps[name].GetComponent<S_PopUpBase>().StartOpenPopUpSign(name, sign);
+        }
+
         public void AddActivePopUp(string name, GameObject popUp)
         {
             if (ActivePopUps.ContainsKey(name))

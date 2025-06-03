@@ -44,7 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b038c035739312047911a8d90b0cdeb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: B
+  signName: B
   Description: Letra B
   SignImage: {fileID: 1295241224172857262, guid: ba04b6a8f3fabc8469a7241c61803069, type: 3}
-  Video: {fileID: 0}
+  Video: {fileID: 32900000, guid: 4ed4edafb8d95e24a8f63339b6b4e4fc, type: 3}
+  renderTexture: {fileID: 8400000, guid: 74818da8325c91b48873ff7ab589cfc0, type: 2}
