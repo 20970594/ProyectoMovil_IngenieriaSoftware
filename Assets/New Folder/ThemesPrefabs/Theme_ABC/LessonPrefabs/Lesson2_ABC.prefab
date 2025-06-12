@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5839881793771705599
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3743209792286841307}
+  - component: {fileID: 5721889275317580164}
+  m_Layer: 0
+  m_Name: Lesson2_ABC
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3743209792286841307
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5839881793771705599}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 641.4108, y: 182.4057, z: -0.60241294}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5721889275317580164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5839881793771705599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f55e63daabbce24d89a3f71e93c06fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lessonName: Lesson H-N
+  Description: "Se\xF1as H-N"
+  SignList:
+    _serializedList:
+    - Key: H
+      Value: {fileID: 7339703684358644163, guid: a05403aa14f407e4eadf1d4e702812c3, type: 3}
+    - Key: I
+      Value: {fileID: 7339703684358644163, guid: efcdfedc08b6f9b46939b8483f54993c, type: 3}
+    - Key: J
+      Value: {fileID: 7339703684358644163, guid: f64630ce27e6c864a80a982c89e2983d, type: 3}
+    - Key: K
+      Value: {fileID: 7339703684358644163, guid: 8324868f1109c5044960fd68887e2a23, type: 3}
+    - Key: L
+      Value: {fileID: 7339703684358644163, guid: 822a49d034ce4fd4c982011bdceec4d4, type: 3}
+    - Key: M
+      Value: {fileID: 7339703684358644163, guid: 1c12bcea063f6434b93e40fef88399fb, type: 3}
+    - Key: N
+      Value: {fileID: 7339703684358644163, guid: ebf75395de725724a911de4d6b779ebd, type: 3}

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ba04b6a8f3fabc8469a7241c61803069
+guid: 8c81cf64c4958e74f923eb62a6ac12cd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1295241224172857262
-    second: Recurso 5_0
+      213: 450080780327903475
+    second: P_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Recurso 5_0
+      name: P_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 97
-        height: 227
+        height: 112
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ea7e349e70f99f110800000000000000
-      internalID: 1295241224172857262
+      spriteID: 3f0eca7c5120f3600800000000000000
+      internalID: 450080780327903475
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      P_0: 450080780327903475
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+//using UnityEngine.UIElements;
 using static UnityEngine.GraphicsBuffer;
 
 public class S_SceneManager : MonoBehaviour
@@ -20,15 +21,13 @@ public class S_SceneManager : MonoBehaviour
     Coroutine fadeRoutine;
     private void Awake()
     {
-        if (instance == null)
+        if (instance != null && instance != this)
         {
-            instance = this;
-            DontDestroyOnLoad(this.gameObject);
+            Destroy(gameObject);
+            return;
         }
-        else
-        {
-            Destroy(this);
-        }
+        instance = this;
+        DontDestroyOnLoad(gameObject);
     }
 
     private void OnEnable()
@@ -44,6 +43,8 @@ public class S_SceneManager : MonoBehaviour
         fadeMaterial = fadeScene.GetComponentInChildren<Image>().material;
         fadeMaterial.SetFloat("_Fade", 1);
         FadeOut();
+
+        GameObject.FindGameObjectWithTag("ExitBtn").GetComponent<Button>().onClick.AddListener(LoadPreviousScene);
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -75,6 +76,20 @@ public class S_SceneManager : MonoBehaviour
     }
 
     //Metodos de carga de niveles-----------------------------------------------------
+    public void LoadPreviousScene()
+    {
+        string currentScene = SceneManager.GetActiveScene().name;
+
+        switch(currentScene) {
+            case "LessonScene":
+                SceneManager.LoadScene("Lessons");
+                break;
+            case "Lessons":
+                SceneManager.LoadScene("MainmenuScene");
+                break;
+        }
+        
+    }
     public void LoadScene(string sceneName)
     {
         nextSceneName = sceneName;

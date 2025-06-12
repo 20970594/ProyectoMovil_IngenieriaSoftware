@@ -48,5 +48,7 @@ MonoBehaviour:
   themeDescription: 
   LessonList:
     _serializedList:
-    - Key: Lesson_ABC
+    - Key: Lesson A-G
       Value: {fileID: 5721889275317580164, guid: ea11aec6d5c41ec45957c7848e0ec257, type: 3}
+    - Key: Lesson H-N
+      Value: {fileID: 5721889275317580164, guid: 2668806b3c36d4f409096253db49e901, type: 3}

@@ -46,6 +46,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   signName: C
   Description: Letra C
-  SignImage: {fileID: -403382671977132324, guid: 58f1089a2fd6922418997a14f9eda393, type: 3}
+  SignImage: {fileID: 21300000, guid: 8b51c0ac34f0d8046b955e5692b00d3d, type: 3}
   Video: {fileID: 32900000, guid: 08e20082380917c46aab99408900980b, type: 3}
   renderTexture: {fileID: 8400000, guid: 71ee122f749738f43b85a1e182ec8c65, type: 2}

@@ -46,6 +46,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   signName: A
   Description: Letra A
-  SignImage: {fileID: 3463855834514327325, guid: 1f8866fd078f72f44a0e24916c7a1691, type: 3}
+  SignImage: {fileID: 21300000, guid: 849763470ce9614478a04295e2446595, type: 3}
   Video: {fileID: 32900000, guid: 23a9a7f4e79d0cb4c8238c913b8dfe4f, type: 3}
   renderTexture: {fileID: 8400000, guid: 6eba15a9875605c49a181f845d9c6d80, type: 2}
