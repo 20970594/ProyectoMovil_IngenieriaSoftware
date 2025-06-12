@@ -43,8 +43,11 @@ public class S_SceneManager : MonoBehaviour
         fadeMaterial = fadeScene.GetComponentInChildren<Image>().material;
         fadeMaterial.SetFloat("_Fade", 1);
         FadeOut();
-
-        GameObject.FindGameObjectWithTag("ExitBtn").GetComponent<Button>().onClick.AddListener(LoadPreviousScene);
+        if(GameObject.FindGameObjectWithTag("ExitBtn") != null)
+        {
+            GameObject.FindGameObjectWithTag("ExitBtn").GetComponent<Button>().onClick.AddListener(LoadPreviousScene);
+        }
+        
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
