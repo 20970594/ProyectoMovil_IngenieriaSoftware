@@ -143,7 +143,7 @@ public class S_HangmanGame : MonoBehaviour
             if (i < options.Count)
             {
                 char option = options[i];
-                optionButtons[i].GetComponentInChildren<TMP_Text>().text = option.ToString();
+                //optionButtons[i].GetComponentInChildren<TMP_Text>().text = option.ToString();
                 optionButtons[i].interactable = true;
 
                 // Buscar la seña correspondiente

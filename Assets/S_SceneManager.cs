@@ -84,15 +84,19 @@ public class S_SceneManager : MonoBehaviour
         string currentScene = SceneManager.GetActiveScene().name;
 
         switch(currentScene) {
-            case "MinigameScene":
-                SceneManager.LoadScene("LessonScene");
-                break;
             case "LessonScene":
                 SceneManager.LoadScene("Lessons");
                 break;
             case "Lessons":
                 SceneManager.LoadScene("MainmenuScene");
                 break;
+            case "MinigameHangmanScene":
+                SceneManager.LoadScene("LessonScene");
+                break;
+            case "MinigameMemorizeScene":
+                SceneManager.LoadScene("LessonScene");
+                break;
+
         }
         
     }
@@ -156,6 +160,12 @@ public class S_SceneManager : MonoBehaviour
                     SceneManager.LoadScene(nextSceneName);
                     break;
                 case "MinigameScene":
+                    SceneManager.LoadScene(nextSceneName);
+                    break;
+                case "MinigameHangmanScene":
+                    SceneManager.LoadScene(nextSceneName);
+                    break;
+                case "MinigameMemorizeScene":
                     SceneManager.LoadScene(nextSceneName);
                     break;
             }

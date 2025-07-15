@@ -29,7 +29,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Fade: 1
+    - _Fade: 0
     m_Colors:
     - _Color: {r: 0.21568628, g: 0.21568628, b: 0.21176471, a: 1}
   m_BuildTextureStacks: []

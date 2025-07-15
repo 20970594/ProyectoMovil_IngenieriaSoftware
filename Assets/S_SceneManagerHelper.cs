@@ -17,8 +17,8 @@ public class S_SceneManagerHelper : MonoBehaviour
     {
         // Lista de escenas de minijuegos disponibles
         string[] minigameScenes = {
-            "Minigame_HangmanScene",
-            "Minigame_MemorizeScene"
+            "MinigameHangmanScene",
+            "MinigameMemorizeScene"
         };
 
         // Seleccionar una escena al azar
