@@ -106,6 +106,12 @@ public class S_SceneManager : MonoBehaviour
         nextSceneName = "MainmenuScene";
         FadeIn();
     }
+
+    public void LoadMinigameScene()
+    {
+        SceneManager.LoadScene("MinigameScene");
+        FadeIn();
+    }
     /*public void LoadLessonScene()
     {
         nextSceneName = "Lessons";

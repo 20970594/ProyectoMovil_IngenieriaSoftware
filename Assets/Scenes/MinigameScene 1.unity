@@ -3240,6 +3240,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1466212005}
   - component: {fileID: 1466212006}
+  - component: {fileID: 1466212007}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3269,7 +3270,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1466212004}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f3b513a67ec06ee409bb3de3998abc62, type: 3}
   m_Name: 
@@ -3302,6 +3303,28 @@ MonoBehaviour:
   - DEDO
   - FLOR
   - GATO
+--- !u!114 &1466212007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1466212004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bb71e8b3f2e993458914515f1008eca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  signImageDisplay: {fileID: 1283211470}
+  optionButtons:
+  - {fileID: 672626260}
+  - {fileID: 648678739}
+  - {fileID: 387059340}
+  - {fileID: 606918450}
+  feedbackText: {fileID: 241487695}
+  scoreText: {fileID: 1545647577}
+  roundsPerGame: 5
+  timeBetweenRounds: 1.5
 --- !u!1 &1545647575
 GameObject:
   m_ObjectHideFlags: 0
