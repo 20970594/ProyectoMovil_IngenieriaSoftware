@@ -84,6 +84,9 @@ public class S_SceneManager : MonoBehaviour
         string currentScene = SceneManager.GetActiveScene().name;
 
         switch(currentScene) {
+            case "MinigameScene":
+                SceneManager.LoadScene("LessonScene");
+                break;
             case "LessonScene":
                 SceneManager.LoadScene("Lessons");
                 break;
@@ -101,6 +104,12 @@ public class S_SceneManager : MonoBehaviour
     public void LoadMainmenuScene()
     {
         nextSceneName = "MainmenuScene";
+        FadeIn();
+    }
+
+    public void LoadMinigameScene()
+    {
+        SceneManager.LoadScene("MinigameScene");
         FadeIn();
     }
     /*public void LoadLessonScene()
@@ -144,6 +153,9 @@ public class S_SceneManager : MonoBehaviour
                     SceneManager.LoadScene(nextSceneName);
                     break;
                 case "LessonScene":
+                    SceneManager.LoadScene(nextSceneName);
+                    break;
+                case "MinigameScene":
                     SceneManager.LoadScene(nextSceneName);
                     break;
             }

@@ -486,7 +486,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 239733466}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4668709830108921009}
+        m_TargetAssemblyTypeName: S_SceneManagerHelper, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Minigame_HangmanScene
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &239733466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2201,6 +2213,86 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2076458141}
   m_CullTransparentMesh: 1
+--- !u!1001 &4668709830108921008
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1915681965888721989, guid: 069599f1719a795439abbba1ed8ff724, type: 3}
+      propertyPath: randomScenes.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915681965888721989, guid: 069599f1719a795439abbba1ed8ff724, type: 3}
+      propertyPath: 'randomScenes.Array.data[0]'
+      value: Minigame_HangmanScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915681965888721989, guid: 069599f1719a795439abbba1ed8ff724, type: 3}
+      propertyPath: 'randomScenes.Array.data[1]'
+      value: Minigame_MemorizeScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 2484093748103745369, guid: 069599f1719a795439abbba1ed8ff724, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 552.1478
+      objectReference: {fileID: 0}
+    - target: {fileID: 2484093748103745369, guid: 069599f1719a795439abbba1ed8ff724, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1170.678
+      objectReference: {fileID: 0}
+    - target: {fileID: 2484093748103745369, guid: 069599f1719a795439abbba1ed8ff724, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.026093602
+      objectReference: {fileID: 0}
+    - target: {fileID: 2484093748103745369, guid: 069599f1719a795439abbba1ed8ff724, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2484093748103745369, guid: 069599f1719a795439abbba1ed8ff724, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2484093748103745369, guid: 069599f1719a795439abbba1ed8ff724, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2484093748103745369, guid: 069599f1719a795439abbba1ed8ff724, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2484093748103745369, guid: 069599f1719a795439abbba1ed8ff724, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2484093748103745369, guid: 069599f1719a795439abbba1ed8ff724, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2484093748103745369, guid: 069599f1719a795439abbba1ed8ff724, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6453927247854271060, guid: 069599f1719a795439abbba1ed8ff724, type: 3}
+      propertyPath: m_Name
+      value: SceneManagerHelper
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 069599f1719a795439abbba1ed8ff724, type: 3}
+--- !u!114 &4668709830108921009 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1915681965888721989, guid: 069599f1719a795439abbba1ed8ff724, type: 3}
+  m_PrefabInstance: {fileID: 4668709830108921008}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d719a9ed6ba0524ab149764a8a29074, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -2211,3 +2303,4 @@ SceneRoots:
   - {fileID: 45567986}
   - {fileID: 73526377}
   - {fileID: 965554276}
+  - {fileID: 4668709830108921008}
