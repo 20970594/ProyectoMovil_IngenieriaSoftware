@@ -3288,7 +3288,12 @@ MonoBehaviour:
   - {fileID: 606918449}
   descriptionText: {fileID: 241487695}
   hangmanStages:
-  - {fileID: 21300000, guid: a81e74e0c53ec3147a0dec622f5b4e08, type: 3}
+  - {fileID: -1150208191, guid: 406781e38dfbc16478ffc3c49430b6f5, type: 3}
+  - {fileID: -1721316640, guid: 406781e38dfbc16478ffc3c49430b6f5, type: 3}
+  - {fileID: 1524201879, guid: 406781e38dfbc16478ffc3c49430b6f5, type: 3}
+  - {fileID: 1937641021, guid: 406781e38dfbc16478ffc3c49430b6f5, type: 3}
+  - {fileID: 1767318059415254626, guid: 406781e38dfbc16478ffc3c49430b6f5, type: 3}
+  - {fileID: 1853867030, guid: 406781e38dfbc16478ffc3c49430b6f5, type: 3}
   wordsForLesson:
   - ESTRELLA
   - AGUA
