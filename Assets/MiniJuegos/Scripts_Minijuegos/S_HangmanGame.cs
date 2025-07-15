@@ -12,35 +12,68 @@ public class S_HangmanGame : MonoBehaviour
     public Image hangmanImage;
     public List<Button> optionButtons;
     public List<Image> optionSignImages;
-    public TMP_Text descriptionText;
+    public TMP_Text feedbackText;
+    public Button actionButton;
+    public TMP_Text actionButtonText;
 
     [Header("Game Settings")]
-    public Sprite[] hangmanStages; // Imágenes para cada etapa del ahorcado
-    public string[] wordsForLesson; // Palabras para la lección actual
+    public Sprite[] hangmanStages;
+    public string[] wordsForLesson;
+    public int roundsPerGame = 5;
+    public float timeBetweenRounds = 1.5f;
+    public Color defaultTextColor = Color.white;
 
     private string currentWord;
     private char[] revealedLetters;
     private List<char> availableLetters;
     private int livesRemaining;
     private S_Lesson currentLesson;
+    private int currentRound = 0;
+    private int score = 0;
+    private bool gameFinished = false;
 
     void Start()
     {
         currentLesson = S_AppManager.AppInstance.currentLesson;
-        InitializeGame();
+
+        // Configurar botón de acción
+        actionButton.onClick.RemoveAllListeners();
+        actionButton.onClick.AddListener(OnActionButtonPressed);
+        actionButtonText.text = "Reiniciar";
+        actionButton.gameObject.SetActive(false);
+
+        StartNewGame();
     }
 
-    void InitializeGame()
+    void StartNewGame()
     {
+        currentRound = 0;
+        score = 0;
+        gameFinished = false;
+        actionButton.gameObject.SetActive(true);
+        UpdateFeedback();
+        InitializeRound();
+    }
+
+    void InitializeRound()
+    {
+        if (currentRound >= roundsPerGame)
+        {
+            GameOver();
+            return;
+        }
+
+        currentRound++;
+        UpdateFeedback();
+
         // Seleccionar una palabra aleatoria para la lección actual
         currentWord = GetRandomWordForLesson();
-        revealedLetters = new char[currentWord.Length];
         availableLetters = GetLettersFromCurrentLesson();
+        revealedLetters = new char[currentWord.Length];
 
         // Inicializar palabra mostrada
         for (int i = 0; i < currentWord.Length; i++)
         {
-            // Mostrar solo letras que NO están en la lección actual
             revealedLetters[i] = availableLetters.Contains(char.ToUpper(currentWord[i])) ? '_' : char.ToUpper(currentWord[i]);
         }
 
@@ -48,14 +81,24 @@ public class S_HangmanGame : MonoBehaviour
         livesRemaining = hangmanStages.Length - 1;
         hangmanImage.sprite = hangmanStages[0];
 
-        // Configurar primera ronda de opciones
         SetupOptions();
+    }
+
+    void UpdateFeedback()
+    {
+        if (gameFinished)
+        {
+            feedbackText.text = $"Juego terminado!\nAciertos: {score}/{roundsPerGame}";
+        }
+        else
+        {
+            feedbackText.text = $"Ronda {currentRound} de {roundsPerGame}\nAciertos: {score}";
+        }
+        feedbackText.color = defaultTextColor;
     }
 
     string GetRandomWordForLesson()
     {
-        // Lógica para obtener palabras relevantes para la lección
-        // Puedes expandir esto para tener un diccionario por lección
         return wordsForLesson[Random.Range(0, wordsForLesson.Length)].ToUpper();
     }
 
@@ -64,7 +107,7 @@ public class S_HangmanGame : MonoBehaviour
         List<char> letters = new List<char>();
         foreach (var sign in currentLesson.SignList.Values)
         {
-            if (sign.signName.Length == 1) // Asumiendo que las letras son signos con nombre de 1 carácter
+            if (sign.signName.Length == 1)
             {
                 letters.Add(char.ToUpper(sign.signName[0]));
             }
@@ -101,15 +144,15 @@ public class S_HangmanGame : MonoBehaviour
             {
                 char option = options[i];
                 optionButtons[i].GetComponentInChildren<TMP_Text>().text = option.ToString();
+                optionButtons[i].interactable = true;
 
-                // Buscar la seña correspondiente en la lección actual
+                // Buscar la seña correspondiente
                 S_Sign sign = currentLesson.SignList.Values.FirstOrDefault(s => s.signName.ToUpper() == option.ToString());
                 if (sign != null)
                 {
                     optionSignImages[i].sprite = sign.SignImage;
                     optionButtons[i].onClick.RemoveAllListeners();
 
-                    // Usar variable local para evitar problemas de closure
                     char selectedOption = option;
                     optionButtons[i].onClick.AddListener(() => OnOptionSelected(selectedOption));
                 }
@@ -130,11 +173,17 @@ public class S_HangmanGame : MonoBehaviour
                 return char.ToUpper(currentWord[i]);
             }
         }
-        return '_'; // Fallback, no debería ocurrir
+        return '_';
     }
 
     void OnOptionSelected(char selectedLetter)
     {
+        // Desactivar botones temporalmente
+        foreach (var button in optionButtons)
+        {
+            button.interactable = false;
+        }
+
         bool correctGuess = false;
 
         // Revelar letras correctas
@@ -149,26 +198,35 @@ public class S_HangmanGame : MonoBehaviour
 
         if (correctGuess)
         {
+            feedbackText.text = "¡Correcto!";
+            feedbackText.color = Color.green;
             UpdateWordDisplay();
 
-            // Verificar si ganó
+            // Verificar si completó la palabra
             if (!revealedLetters.Contains('_'))
             {
-                GameOver(true);
-                return;
+                score++;
+                UpdateFeedback();
+                feedbackText.text += "\n¡Palabra completada!";
+                Invoke("PrepareNextRound", timeBetweenRounds);
             }
-
-            // Configurar nuevas opciones
-            SetupOptions();
+            else
+            {
+                // Continuar con la misma palabra
+                SetupOptions();
+            }
         }
         else
         {
             livesRemaining--;
             hangmanImage.sprite = hangmanStages[hangmanStages.Length - livesRemaining - 1];
+            feedbackText.text = "Incorrecto";
+            feedbackText.color = Color.red;
 
             if (livesRemaining <= 0)
             {
-                GameOver(false);
+                feedbackText.text += $"\nLa palabra era: {currentWord}";
+                Invoke("PrepareNextRound", timeBetweenRounds);
             }
             else
             {
@@ -177,31 +235,54 @@ public class S_HangmanGame : MonoBehaviour
         }
     }
 
+    void PrepareNextRound()
+    {
+        if (currentRound < roundsPerGame)
+        {
+            InitializeRound();
+        }
+        else
+        {
+            GameOver();
+        }
+    }
+
     void UpdateWordDisplay()
     {
         wordDisplay.text = string.Join(" ", revealedLetters);
     }
 
-    void GameOver(bool won)
+    void GameOver()
     {
-        foreach (var button in optionButtons)
+        gameFinished = true;
+        UpdateFeedback();
+
+        // Cambiar botón a "Salir"
+        actionButtonText.text = "Salir";
+        actionButton.onClick.RemoveAllListeners();
+        actionButton.onClick.AddListener(ReturnToPreviousScene);
+    }
+
+    void OnActionButtonPressed()
+    {
+        if (gameFinished)
         {
-            button.interactable = false;
+            ReturnToPreviousScene();
         }
-
-        descriptionText.text = won ? "¡Felicidades! Ganaste." : $"Game Over. La palabra era: {currentWord}";
-
-        // Mostrar botón de reinicio o continuar
-        // Puedes añadir lógica para guardar progreso, puntos, etc.
+        else
+        {
+            RestartGame();
+        }
     }
 
     public void RestartGame()
     {
-        InitializeGame();
-        foreach (var button in optionButtons)
-        {
-            button.interactable = true;
-        }
-        descriptionText.text = "";
+        CancelInvoke();
+        StartNewGame();
+    }
+
+    public void ReturnToPreviousScene()
+    {
+        S_SceneManager.instance.LoadPreviousScene();
     }
 }

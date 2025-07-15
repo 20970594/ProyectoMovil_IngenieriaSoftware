@@ -588,8 +588,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 0, y: 7.6}
+  m_SizeDelta: {x: 450, y: 63.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &249607646
 GameObject:
@@ -1821,8 +1821,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 100
+  m_fontSizeBase: 100
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2921,7 +2921,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Verificar respuesta
+  m_text: Reiniciar
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2930,8 +2930,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3270,7 +3270,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1466212004}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f3b513a67ec06ee409bb3de3998abc62, type: 3}
   m_Name: 
@@ -3287,7 +3287,9 @@ MonoBehaviour:
   - {fileID: 648678738}
   - {fileID: 387059339}
   - {fileID: 606918449}
-  descriptionText: {fileID: 241487695}
+  feedbackText: {fileID: 241487695}
+  actionButton: {fileID: 239733465}
+  actionButtonText: {fileID: 1099940566}
   hangmanStages:
   - {fileID: -1150208191, guid: 406781e38dfbc16478ffc3c49430b6f5, type: 3}
   - {fileID: -1721316640, guid: 406781e38dfbc16478ffc3c49430b6f5, type: 3}
@@ -3296,13 +3298,22 @@ MonoBehaviour:
   - {fileID: 1767318059415254626, guid: 406781e38dfbc16478ffc3c49430b6f5, type: 3}
   - {fileID: 1853867030, guid: 406781e38dfbc16478ffc3c49430b6f5, type: 3}
   wordsForLesson:
-  - ESTRELLA
-  - AGUA
-  - BEBE
-  - CASA
-  - DEDO
-  - FLOR
-  - GATO
+  - Elefante
+  - Jirafa
+  - Tigre
+  - Cocodrilo
+  - Mariposa
+  - Manzana
+  - "Pl\xE1tano"
+  - Fresa
+  - "Sand\xEDa"
+  - "F\xFAtbol"
+  - "Tel\xE9fono"
+  - Astronauta
+  - Caleidoscopio
+  roundsPerGame: 5
+  timeBetweenRounds: 1.5
+  defaultTextColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1466212007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3310,7 +3321,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1466212004}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4bb71e8b3f2e993458914515f1008eca, type: 3}
   m_Name: 
@@ -3323,8 +3334,11 @@ MonoBehaviour:
   - {fileID: 606918450}
   feedbackText: {fileID: 241487695}
   scoreText: {fileID: 1545647577}
+  actionButton: {fileID: 239733465}
+  actionButtonText: {fileID: 1099940566}
   roundsPerGame: 5
   timeBetweenRounds: 1.5
+  defaultTextColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1545647575
 GameObject:
   m_ObjectHideFlags: 0
@@ -3748,8 +3762,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 100
+  m_fontSizeBase: 100
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3884,8 +3898,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 100
+  m_fontSizeBase: 100
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4449,8 +4463,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 100
+  m_fontSizeBase: 100
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
