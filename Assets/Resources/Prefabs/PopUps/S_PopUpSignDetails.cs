@@ -12,6 +12,26 @@ public class S_PopUpSignDetails : S_PopUpBase
     public VideoPlayer videoPlayer;
     public Button playerButton;
     public TextMeshProUGUI textMeshPro;
+    public Image pauseImage;
+
+    private bool isPaused;
+
+    public void PauseResumeVideo()
+    {
+        if (isPaused)
+        {
+            isPaused = false;
+            pauseImage.color = Color.clear;
+            videoPlayer.Play();
+        }
+        else
+        {
+            isPaused = true;
+            pauseImage.color = Color.white;
+            videoPlayer.Pause();
+        }
+        
+    }
     public override IEnumerator ClosePopUp()
     {
         Debug.Log("Hola soy UserDetails");

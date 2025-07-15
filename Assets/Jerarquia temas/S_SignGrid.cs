@@ -24,7 +24,7 @@ public class S_SignGrid : MonoBehaviour
             signBtn.GetComponent<S_Sign>().Video = sign.Video;
             signBtn.GetComponent<S_Sign>().renderTexture = sign.renderTexture;
 
-            signBtn.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(() => popUpManager.OpenPopUpSign("SignDetails", sign));
+            signBtn.GetComponent<Button>().onClick.AddListener(() => popUpManager.OpenPopUpSign("SignDetails", sign));
         }
     }
 }
